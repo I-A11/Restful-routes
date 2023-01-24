@@ -8,7 +8,7 @@
   </head>
   <body>
     <h1>Make a new comment</h1>
-    <form action="">
+    <form action="/comments" method="post">
       <section>
         <label for="username">Username</label>
         <input
@@ -19,11 +19,12 @@
         />
       </section>
       <section>
-        <label for="comments">comment text</label>
+        <label for="comment">comment text</label>
         <br />
 
-        <textarea name="" id="comments" cols="30" rows="5"></textarea>
+        <textarea id="comment" cols="30" rows="5" name="comment"></textarea>
       </section>
+      <button>Submit</button>
     </form>
   </body>
 </html>
