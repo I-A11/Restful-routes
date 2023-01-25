@@ -36,9 +36,8 @@ app.get("/comments/new", (req, res) => {
 
 app.post("/comments", (req, res) => {
   const { username, comment } = req.body;
-  console.log(username, comment);
   comments.push({ username, comment });
-  res.send("IT WORKED");
+  res.redirect("/comments");
 });
 
 app.get("/tacos", (req, res) => {
