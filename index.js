@@ -51,6 +51,26 @@ app.get("/comments/:id", (req, res) => {
   res.render("comments/show", { comment });
 });
 
+// app.patch("comments/:id", (req, res) => {
+//   const { id } = req.params;
+//   const newCommentText = req.body.comment;
+//   const foundComment = comments.find((c) => c.id === id);
+//   foundComment.comment = newCommentText;
+//   res.redirect("/comments");
+// });
+
+app.patch("/comments/:id", (req, res) => {
+  const { id } = req.params;
+  const foundComment = comments.find((c) => c.id === id);
+
+  //get new text from req.body
+  const newCommentText = req.body.comment;
+  //update the comment with the data from req.body:
+  foundComment.comment = newCommentText;
+  //redirect back to index (or wherever you want)
+  res.redirect("/comments");
+});
+
 app.get("/tacos", (req, res) => {
   res.send("GET /tacos response");
 });
